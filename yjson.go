@@ -306,10 +306,9 @@ func (r *Result) Array() []interface{} {
 
 }
 
-var result map[string]interface{}
-
 func parseToMap(js string) (map[string]interface{}, error) {
-
+	
+	var result map[string]interface{}
 	err := json.Unmarshal([]byte(js), &result)
 	if err != nil {
 		return nil, err
@@ -360,5 +359,5 @@ func (r *Result) getInterfateType(v interface{}) {
 
 func (r Result) String() string {
 
-	return fmt.Sprintf("%v",r.primitive)
+	return fmt.Sprintf("%v", r.primitive)
 }
